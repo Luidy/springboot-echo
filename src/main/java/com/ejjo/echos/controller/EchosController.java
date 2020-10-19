@@ -14,11 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class EchosController {
+    @Autowired
     private RabbitTemplate rabbitTemplate;
 
     @PostMapping(value = "/api/v1/echos")
     public Body echos(@RequestBody Body body){
-        rabbitTemplate.convertAndSend("", "echos", body);
+        rabbitTemplate.convertAndSend("echos-exchange", "echos", body.getContent());
         return body;
     }
 
