@@ -4,3 +4,10 @@ mq:
     - "5672:5672"
     - "15672:15672"
 
+mysql:
+  image: mysql:latest
+  environment:
+    MYSQL_DATABASE: echos_db
+    MYSQL_ROOT_PASSWORD: 1234
+  ports:
+    - "3306:3306"
