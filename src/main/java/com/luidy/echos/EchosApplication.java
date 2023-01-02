@@ -11,9 +11,9 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 /* @SpringBootApplication 는 @EnableAutoConfiguration 이 붙어있으며
  @EnableAutoConfiguration 통해서 설정을 위한 다양한 Bean 이 등록됨
  따라서 설정을 수동으로 지정하지 않아도 됨
- (spring-boot-autoconfiture 라이브러리에 자동 설정을 위한 클래스가 등록되어있음) */
+ (spring-boot-autoconfigure 라이브러리에 자동 설정을 위한 클래스가 등록되어있음) */
 
-@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
+@SpringBootApplication
 public class EchosApplication {
     public static void main(String[] args) {
         SpringApplication.run(EchosApplication.class, args);
