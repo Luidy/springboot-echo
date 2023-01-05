@@ -4,6 +4,7 @@ import com.luidy.echos.entity.User;
 import com.luidy.echos.store.UserStore;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -12,6 +13,10 @@ import java.util.stream.Collectors;
 public class UserStoreLogic implements UserStore {
 
     private Map<String, User> userMap;
+
+    public UserStoreLogic() {
+        this.userMap = new HashMap<>();
+    }
 
     @Override
     public String create(User user) {
